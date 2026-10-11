@@ -1,39 +1,41 @@
-# Task 5: Analytics Report & Insights Documentation
+# Task 6: Student Performance Prediction
 
-## Overview
-This beginner-friendly project demonstrates a simple sales analysis workflow using Python and Pandas, with charts created using Matplotlib.
+## Project overview
+This capstone demonstrates a basic end-to-end machine-learning workflow. A logistic regression classifier uses four input features to predict an illustrative binary outcome (`passed`).
 
-**Important:** The included four-row sales dataset is illustrative and hypothetical. It is not real company data.
+## Dataset
+`student_performance_dataset.csv` contains 240 **synthetic/illustrative** records with:
+- `study_hours_per_day`
+- `attendance_percentage`
+- `previous_exam_score`
+- `assignment_completion_percentage`
+- `passed` (0 = not passed, 1 = passed)
 
-## Files
-- `sample_sales_data.csv` — illustrative product sales dataset
-- `sales_analysis.py` — Python script for inspection, summary statistics, findings, and chart creation
-- `total_sales_by_product.png` — sales value comparison chart
-- `units_sold_by_product.png` — units sold comparison chart
+The dataset is generated for educational practice; it is not real student data and must not be used to judge real students.
 
 ## Tools
-- Python
-- Pandas
-- Matplotlib
+Python, pandas, scikit-learn, matplotlib.
 
 ## Run the project
-1. Install Python 3.
-2. Install packages:
+1. Install Python 3.10 or later.
+2. Install dependencies:
    ```bash
-   pip install pandas matplotlib
+   pip install -r requirements.txt
    ```
-3. Run from this folder:
+3. Run:
    ```bash
-   python sales_analysis.py
+   python student_performance_prediction.py
    ```
 
-The script prints dataset checks and key findings, then saves and displays both charts.
+The script prints evaluation metrics and creates an `outputs/` folder containing the outcome distribution chart, confusion matrix, and test predictions.
 
-## Findings from the sample data
-- Total sales value: ₹2,085.
-- Notebook has the highest total sales value: ₹1,000.
-- Pen has the highest unit volume: 35 units.
-- Units sold and sales value are different measures; both should be considered when interpreting performance.
+## Workflow
+1. Load the CSV dataset.
+2. Separate input features and target label.
+3. Split the data into training and test sets.
+4. Standardize features and train logistic regression.
+5. Evaluate using accuracy and a classification report.
+6. Save visualizations and test predictions.
 
-## Limitations
-The dataset contains only four hypothetical products and has no dates, costs, profit margins, or customer information. It is intended for practice only and cannot support conclusions about a real business.
+## Limitations and responsible use
+The dataset is synthetic and the labels are based on a simplified artificial rule. Results do not establish real-world predictive performance. Real educational data would require permission, privacy protection, bias checks, and careful human review.
